@@ -7,7 +7,8 @@ import type { TxType } from '../lib/types';
 import { cx, timeAgo } from '../lib/format';
 import { navigate } from '../lib/router';
 import { useStore } from '../lib/store';
-import { Logo, LogoMark } from '../components/Brand';
+import { Logo } from '../components/Brand';
+import { LogoMark } from '../components/Brand';
 import { TransactionModal } from '../components/TransactionForm';
 
 export const studentNav = [
@@ -75,7 +76,7 @@ function Sidebar({ route, collapsed, onToggle }: { route: string; collapsed: boo
     <aside className={cx('fixed inset-y-0 left-0 z-30 hidden flex-col bg-nav px-4 py-5 transition-[width] duration-200 md:flex', collapsed ? 'w-[84px]' : 'w-[264px]')}
       aria-label="Main navigation">
       <div className={cx('flex items-center', collapsed ? 'justify-center' : 'justify-between px-1')}>
-        <a href="#/app" aria-label="Campus Coin home">{collapsed ? <LogoMark size={36} /> : <Logo light />}</a>
+        <a href="#/app" className='h-12 w-12 flex'><LogoMark /><Logo light/></a>
       </div>
       <button onClick={onToggle} aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         className="absolute -right-3 top-8 flex h-7 w-7 items-center justify-center rounded-full border border-line bg-surface text-muted shadow-soft hover:text-fg">
@@ -141,7 +142,7 @@ function Topbar({ route }: { route: string }) {
   return (
     <header className="sticky top-0 z-20 border-b border-transparent bg-canvas/85 backdrop-blur-md" style={{ top: 'env(safe-area-inset-top, 0px)' }}>
       <div className="mx-auto flex h-16 max-w-[1280px] items-center gap-3 px-4 sm:px-6 lg:px-8">
-        <a href="#/app" className="md:hidden" aria-label="Campus Coin home"><LogoMark size={32} /></a>
+        <a href="#/app" className="md:hidden" aria-label="Campus Coin home"><LogoMark  /></a>
         <nav aria-label="Breadcrumb" className="hidden min-w-0 items-center gap-1.5 text-sm md:flex">
           <a href="#/app" className="font-medium text-muted hover:text-fg">Campus Coin</a>
           {route !== '/app' && (<><ChevronRight className="h-4 w-4 text-muted" /><span className="truncate font-semibold">{title}</span></>)}

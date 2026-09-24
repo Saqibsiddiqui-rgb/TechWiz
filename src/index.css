@@ -4,7 +4,7 @@
 
 /* ---------- Theme tokens (RGB triplets so Tailwind can apply opacity) ---------- */
 :root {
-  --canvas: 247 244 236;   /* Warm Cream */
+  --canvas: 170 228 183;   /* Warm Cream */
   --surface: 255 255 255;
   --raised: 251 249 244;
   --fg: 23 32 51;          /* Deep Ink */
